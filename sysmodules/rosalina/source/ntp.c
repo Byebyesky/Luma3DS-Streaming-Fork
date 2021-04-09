@@ -148,7 +148,7 @@ Result ntpSetTimeDate(time_t timestamp)
     // Update the user time offset
     // 946684800 is the timestamp of 01/01/2000 00:00 relative to the Unix Epoch
     s64 msY2k = (timestamp - 946684800) * 1000;
-    res = PTMSYSM_SetUserTime(msY2k);
+    res = PTMSYSM_SetRtcTime(msY2k);
 
     ptmSysmExit();
     return res;
